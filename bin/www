@@ -82,6 +82,6 @@ socket.connectGame(server);
  * Listen on provided port, on all network interfaces.
  */
 
-server.listen(port);
+server.listen(8888);
 server.on('error', utils.onError);
 server.on('listening', utils.onListening);
