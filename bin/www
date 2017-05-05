@@ -67,7 +67,7 @@ process.title = "Connect4";
  * Get port from environment and store in Express.
  */
 
-let port = utils.normalizePort(process.env.PORT || '3000');
+let port = utils.normalizePort(process.env.PORT || '8888');
 app.set('port', port);
 
 /**
