@@ -94,9 +94,7 @@ router.get('/:id', passport.authenticate("bearer", {
 });
 
 //récupère les historiques de jeu de l'utilisateur connecté
-router.post('/scores', passport.authenticate("bearer", {
-  session: false
-}), (req, res) => {
+router.post('/scores', (req, res) => {
   models.game.find({
       $or: [{
         playerOne: req.user._id
