@@ -129,7 +129,7 @@ router.post('/scores', passport.authenticate("bearer", {
 //récupère les parties en attentes de second joueur
 router.post('/waitingGame', (req, res)=>{
   let result = [];
-  for(game in utils.games){
+  for(let game in utils.games){
     if(typeof utils.games[game].p2 === "undefined"){
       result.push({id: game, playerOne: utils.games[game].p1.nickname})
     }
