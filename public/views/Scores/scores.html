@@ -1,0 +1,35 @@
+<div class="heightmax" layout="column" layout-fill="layout-fill" data-ng-init="loadGames()">
+    <md-toolbar class="whiterb">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button " ng-click="toggleSidenav()">
+                <md-icon class="material-icons redrb-text" aria-label="Menu">menu</md-icon>
+            </md-button>
+            <h2 class="redrb-text">Connect Four</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex="flex" class="blackrb">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2 redrb whiterb-text" md-component-id="left">
+            <md-list>
+                <md-list>
+                    <md-list-item class="pointer" ng-href="#/dashboard" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Accueil">home</md-icon>
+                        <p>Accueil</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-href="#/scores" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Scores">videogame_asset</md-icon>
+                        <p>Scores</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-click="disconnect('/dashboard')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Déconnexion">settings_power</md-icon>
+                        <p>Déconnexion</p>
+                    </md-list-item>
+                </md-list>
+            </md-list>
+        </md-sidenav>
+        <main layout-margin="layout-margin">
+            <div layout="row" class="game" ng-repeat="game in games">
+                <span class="whiterb-text score-text center-text"><i class="fa fa-calendar"></i> <span>{{game.created_at | date:'yyyy-MM-dd à HH:mm'}}</span> <i ng-if="user.nickname == game.winner.nickname" class="fa fa-2x fa-trophy whiterb-text p1-text"></i><i ng-if="user.nickname != game.winner.nickname" class="fa fa-2x fa-thumbs-o-down whiterb-text p2-text"></i> <span><b>{{game.playerOne.nickname}}</b></span> VS <span><b>{{game.playerTwo.nickname}}</b></span> => <span><b>{{game.winner.nickname}}</b></span> <span>en {{game.moves}} coups</span></span>
+            </div>
+        </main>
+    </md-content>
+</div>

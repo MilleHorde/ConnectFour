@@ -1,0 +1,146 @@
+.heightmax {
+  height: 100%;
+}
+
+.containerDiv {
+  padding: 15px;
+}
+
+@media (min-width: 960px) {
+  .containerDiv {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 2px 1px -1px rgba(0, 0, 0, .12);
+  }
+  #board {
+    margin-left: calc((100% - 100vh)/2);
+    margin-right: calc((100% - 100vh)/2);
+    width: 100vh
+  }
+  .center {
+    width: 40%;
+    margin: 5% 30% 5% 30%;
+  }
+  .center-text {
+    width: 70%;
+    margin: 2% 15% 2% 15%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 960px) {
+  .center {
+    width: 80%;
+    margin: 5% 10% 5% 10%;
+  }
+  .center-text {
+    width: 90%;
+    margin: 2% 5% 2% 5%;
+    text-align: center;
+  }
+  main,
+  #board {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+  ng-map {
+    height: 200px !important;
+  }
+  md-toolbar img {
+    display: block;
+    margin-left: 25%;
+    margin-right: auto;
+  }
+  #board {
+    width: 100vw;
+  }
+}
+
+.redrb {
+  background-color: #e51e2d !important;
+}
+
+.blackrb {
+  background-color: #363737 !important;
+}
+
+.whiterb {
+  background-color: #ffffff !important;
+}
+
+.redrb-text {
+  color: #e51e2d !important;
+}
+
+.blackrb-text {
+  color: #363737 !important;
+}
+
+.whiterb-text {
+  color: #ffffff !important;
+}
+
+md-checkbox.md-default-theme.md-checked .md-icon,
+md-checkbox.md-checked .md-icon {
+  background-color: #e51e2d;
+}
+
+.md-button.md-default-theme.md-raised[disabled],
+.md-button.md-raised[disabled],
+.md-button.md-default-theme.md-fab[disabled],
+.md-button.md-fab[disabled] {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+button span {
+  font-size: 13px !important;
+}
+
+md-toolbar {
+  -webkit-box-shadow: 0px 1px 1px 0px rgba(200, 200, 200, 0.75);
+  -moz-box-shadow: 0px 1px 1px 0px rgba(200, 200, 200, 0.75);
+  box-shadow: 0px 1px 1px 0px rgba(200, 200, 200, 0.75);
+}
+
+#board {
+  background-color: #446cb3;
+  margin-top: 20px;
+}
+
+.cells {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  margin: 10%;
+  cursor: pointer;
+}
+
+.p1 {
+  background-color: #f4d03f !important;
+}
+
+.p2 {
+  background-color: #d91e18 !important;
+}
+
+.p1-text {
+  color: #f4d03f !important;
+}
+
+.p2-text {
+  color: #d91e18 !important;
+}
+
+.hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.disabled {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.score-text {
+  font-size: 1.4em !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}

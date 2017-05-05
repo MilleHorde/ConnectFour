@@ -1,0 +1,57 @@
+<div class="heightmax" layout="column" layout-fill="layout-fill" data-ng-init="init()">
+    <md-toolbar class="whiterb">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button " ng-click="toggleSidenav()">
+                <md-icon class="material-icons redrb-text" aria-label="Menu">menu</md-icon>
+            </md-button>
+            <h2 class="redrb-text">Connect Four</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex="flex" class="blackrb">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2 redrb whiterb-text" md-component-id="left">
+            <md-list>
+                <md-list>
+                    <md-list-item class="pointer" ng-click="goto('/dashboard')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Accueil">home</md-icon>
+                        <p>Accueil</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-click="goto('/scores')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Scores">videogame_asset</md-icon>
+                        <p>Scores</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-click="disconnect('/dashboard')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Déconnexion">settings_power</md-icon>
+                        <p>Déconnexion</p>
+                    </md-list-item>
+                </md-list>
+            </md-list>
+        </md-sidenav>
+        <main layout-margin="layout-margin">
+            <div id="board" ng-disabled="turnOpponent">
+                <div class="row{{board.length - 1 - $index}} rows" flex="100" layout="row" ng-repeat="row in board | orderBy:'-'">
+                    <style>
+                        @media (min-width: 960px) {
+                            .cols{
+                                height: {{1/row.length *100}}vh;
+                                width: {{1/row.length *100}}vh;
+                            }
+                        }
+
+                        @media (max-width: 960px) {
+                            .cols{
+                                height: {{1/row.length *100}}vw;
+                                width: {{1/row.length *100}}vw;
+                            }
+                        }
+                    </style>
+                    <div class="col{{$index}} cols" layout="column" ng-repeat="col in row track by $index" ng-click="!turnOpponent && move($index)" ng-mouseenter="!turnOpponent && changeColor('col'+$index, true)" ng-mouseleave="!turnOpponent && changeColor('col'+$index, false)">
+                        <div class="cells {{(turnOpponent)?'.disabled':''}}" ng-class="(board[board.length - 1 - $parent.$index][$index]==0)?'':((board[board.length -1 - $parent.$index][$index]==1)?'p1':'p2')" id="row{{board.length - $parent.$index}}col{{$index}}"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="infos" style="display: flex;">
+                <span style="width:100%; text-align: center;" class="whiterb-text">{{infos}}</span>
+            </div>
+        </main>
+    </md-content>
+</div>

@@ -1,0 +1,28 @@
+<form ng-submit="signIn()" layout="row" class="heightmax blackrb" layout-align="center center">
+    <div flex-gt-sm="40" flex-sm="100" flex-gt-md="30" class="containerDiv whiterb">
+
+        <div layout="row" layout-align="none center">
+            <h1 class="md-headline" >Se connecter | Connect Four</h1>
+        </div>
+
+        <md-input-container layout="row">
+            <label>Email</label>
+            <input required type="email" ng-model="user.email">
+        </md-input-container>
+        <md-input-container layout="row">
+            <label>Mot de passe</label>
+            <input required type="password" ng-model="user.password">
+        </md-input-container>
+        <md-checkbox layout="row" ng-model="saveConnect" aria-label="Se souvenir des identifiants">Se souvenir des
+            identifiants
+        </md-checkbox>
+
+        <p ng-if="error" class="md-body-2" md-colors="{color: 'red-500'}">Une erreur est survenue, veuillez
+            réessayer plus tard.</p>
+
+        <div layout="row" layout-align="end center">
+            <md-button type="submit" class="md-raised md-primary redrb" aria-label="Connexion">Connexion</md-button>
+            <md-button class="md-raised md-primary redrb" aria-label="Inscription" ng-click="signUp()">Inscription</md-button>
+        </div>
+    </div>
+</form>

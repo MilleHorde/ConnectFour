@@ -1,0 +1,34 @@
+<div class="heightmax" layout="column" layout-fill="layout-fill">
+    <md-toolbar class="whiterb">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button " ng-click="toggleSidenav()">
+                <md-icon class="material-icons redrb-text" aria-label="Menu">menu</md-icon>
+            </md-button>
+            <h2 class="redrb-text">Connect Four</h2>
+        </div>
+    </md-toolbar>
+    <md-content flex="flex" class="blackrb">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2 redrb whiterb-text" md-component-id="left">
+            <md-list>
+                <md-list>
+                    <md-list-item class="pointer" ng-click="goto('/dashboard')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Accueil">home</md-icon>
+                        <p>Accueil</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-click="goto('/scores')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Scores">videogame_asset</md-icon>
+                        <p>Scores</p>
+                    </md-list-item>
+                    <md-list-item class="pointer" ng-click="disconnect('/dashboard')" md-ink-ripple="#3F51B5">
+                        <md-icon class="material-icons whiterb-text" aria-label="Déconnexion">settings_power</md-icon>
+                        <p>Déconnexion</p>
+                    </md-list-item>
+                </md-list>
+            </md-list>
+        </md-sidenav>
+        <main layout-margin="layout-margin">
+            <md-button ng-click='joinGame(game.id)' class="md-raised md-primary redrb center" aria-label="Rejoindre la partie de {{game.playerOne}}" ng-repeat="game in found">Rejoindre la partie de {{game.playerOne}}</md-button>
+            <h3 class="whiterb-text center" ng-if="found.length <= 0">Aucune partie disponible pour le moment...</h3>
+        </main>
+    </md-content>
+</div>

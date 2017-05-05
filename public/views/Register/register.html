@@ -1,0 +1,35 @@
+<form ng-submit="signUp()" layout="row" class="heightmax blackrb" layout-align="center center">
+    <div flex-gt-sm="40" flex-sm="100" flex-gt-md="30" class="containerDiv whiterb">
+
+        <div layout="row" layout-align="none center">
+            <h1 class="md-headline" >S'inscrire | Connect Four</h1>
+        </div>
+
+        <h3 class="redrb-text">Information personnelles</h3>
+
+        <md-input-container layout="row">
+            <label>Surnom</label>
+            <input required type="text" ng-model="user.nickname">
+        </md-input-container>
+        <md-input-container layout="row">
+            <label>Email</label>
+            <input required type="email" ng-model="user.email">
+        </md-input-container>
+        <md-input-container layout="row">
+            <label>Mot de passe</label>
+            <input required type="password" ng-model="user.password">
+        </md-input-container>
+        <md-input-container layout="row">
+            <label>Confirmation</label>
+            <input required type="password" ng-model="passwordConfirm">
+        </md-input-container>
+        <p ng-if="user.password != passwordConfirm && user.password != null && passwordConfirm != null" class="md-body-2" md-colors="{color: 'red-500'}">Les mots de passe saisis sont différents!</p>
+
+        <p ng-if="error" class="md-body-2" md-colors="{color: 'red-500'}">Une erreur est survenue, veuillez
+            réessayer plus tard.</p>
+        <div layout="row" layout-align="end center">
+            <md-button class="md-raised md-primary redrb" aria-label="Connexion" ng-click="signIn()">Connexion</md-button>
+            <md-button ng-disabled="user.password != passwordConfirm && user.password != null && passwordConfirm != null" type="submit" class="md-raised md-primary redrb" aria-label="Inscription">Inscription</md-button>
+        </div>
+    </div>
+</form>
