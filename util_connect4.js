@@ -88,7 +88,7 @@ let utils = {
         let board = utils.games[room].board;
         let player = board[row][col];
 
-        if (typeof board[row + step] !== 'undefined' && typeof board[row + step][col - step] !== 'undefined' && board[row + step][col - step] == player && step >= 0) {
+        if (typeof board[row + step] !== 'undefined' && typeof board[row + step][col - step] !== 'undefined' && board[row + step][col - step] == player) {
             if (step >= 0) {
                 result = result + utils.checkDiagonalLeftUp(room, row + step, col - step, 1);
             }
